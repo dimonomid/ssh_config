@@ -10,7 +10,7 @@ jobs:
         go-version: 1.21.x
     - uses: actions/checkout@v4
       with:
-         path: './src/github.com/iamFrancescoFerro/ssh_config'
+         path: './src/github.com/kevinburke/ssh_config'
     # staticcheck needs this for GOPATH
     - run: |
         echo "GO111MODULE=off" >> $GITHUB_ENV
@@ -18,7 +18,7 @@ jobs:
         echo "PATH=$GITHUB_WORKSPACE/bin:$PATH" >> $GITHUB_ENV
     - name: Run tests
       run: make lint
-      working-directory: './src/github.com/iamFrancescoFerro/ssh_config'
+      working-directory: './src/github.com/kevinburke/ssh_config'
 
   test:
     strategy:
@@ -32,11 +32,11 @@ jobs:
         go-version: ${{ matrix.go-version }}
     - uses: actions/checkout@v4
       with:
-         path: './src/github.com/iamFrancescoFerro/ssh_config'
+         path: './src/github.com/kevinburke/ssh_config'
     - run: |
         echo "GO111MODULE=off" >> $GITHUB_ENV
         echo "GOPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
         echo "PATH=$GITHUB_WORKSPACE/bin:$PATH" >> $GITHUB_ENV
     - name: Run tests with race detector on
       run: make race-test
-      working-directory: './src/github.com/iamFrancescoFerro/ssh_config'
+      working-directory: './src/github.com/kevinburke/ssh_config'

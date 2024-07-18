@@ -106,7 +106,7 @@ func (p *sshParser) parseKV() sshParserStateFn {
 		comment = tok.val
 	}
 	if strings.ToLower(key.val) == "match" && !p.ignoreMatchDirective {
-		// https://github.com/iamFrancescoFerro/ssh_config/issues/6
+		// https://github.com/kevinburke/ssh_config/issues/6
 		p.raiseErrorf(val, "ssh_config: Match directive parsing is unsupported")
 		return nil
 	}
