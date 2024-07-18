@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/kevinburke/ssh_config"
+	"github.com/iamFrancescoFerro/ssh_config"
 )
 
 func ExampleHost_Matches() {
@@ -53,6 +53,7 @@ func ExampleUserSettings_ConfigFinder() {
 	u := ssh_config.UserSettings{}
 	u.ConfigFinder(func() string {
 		return filepath.Join("testdata", "test_config")
-	})
+	},
+	)
 	u.Get("example.com", "Host")
 }

@@ -105,7 +105,7 @@ func (p *sshParser) parseKV() sshParserStateFn {
 		comment = tok.val
 	}
 	if strings.ToLower(key.val) == "match" {
-		// https://github.com/kevinburke/ssh_config/issues/6
+		// https://github.com/iamFrancescoFerro/ssh_config/issues/6
 		p.raiseErrorf(val, "ssh_config: Match directive parsing is unsupported")
 		return nil
 	}
@@ -133,7 +133,8 @@ func (p *sshParser) parseKV() sshParserStateFn {
 			EOLComment:         comment,
 			spaceBeforeComment: spaceBeforeComment,
 			hasEquals:          hasEquals,
-		})
+		},
+		)
 		return p.parseStart
 	}
 	lastHost := p.config.Hosts[len(p.config.Hosts)-1]
@@ -173,7 +174,8 @@ func (p *sshParser) parseComment() sshParserStateFn {
 		// account for the "#" as well
 		leadingSpace: comment.Position.Col - 2,
 		position:     comment.Position,
-	})
+	},
+	)
 	return p.parseStart
 }
 
