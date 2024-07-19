@@ -71,7 +71,7 @@ the `ssh_config` manpage. Unimplemented features should be present in the
 
 Notably, the `Match` directive is currently unsupported.
 
-[issues]: https://github.com/kevinburke/ssh_config/issues
+[issues]: https://github.com/iamFrancescoFerro/ssh_config/issues
 
 ## Errata
 
@@ -80,7 +80,7 @@ This is the second [comment-preserving configuration parser][blog] I've written,
 file format.
 
 [blog]: https://kev.inburke.com/kevin/more-comment-preserving-configuration-parsers/
-[hostsfile]: https://github.com/kevinburke/hostsfile
+[hostsfile]: https://github.com/iamFrancescoFerro/hostsfile
 
 ## Sponsorships
 
