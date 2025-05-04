@@ -17,10 +17,10 @@ race-test:
 	go test -timeout=500ms -race ./...
 
 $(BUMP_VERSION):
-	go get -u github.com/iamFrancescoFerro/bump_version
+	go get -u github.com/dimonomid/bump_version
 
 $(WRITE_MAILMAP):
-	go get -u github.com/iamFrancescoFerro/write_mailmap
+	go get -u github.com/dimonomid/write_mailmap
 
 release: test | $(BUMP_VERSION)
 	$(BUMP_VERSION) --tag-prefix=v minor config.go
